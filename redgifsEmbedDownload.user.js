@@ -52,10 +52,7 @@
             while (true) {
                 const { done, value } = await reader.read();
 
-                if (done) {
-                    reader.releaseLock();
-                    break;
-                }
+                if (done) break;
 
                 chunks.push(value);
             }
@@ -75,9 +72,10 @@
     };
 
     new MutationObserver((mutations, observer) => {
-        const [player] = mutations
-            .filter(({ addedNodes }) => addedNodes.length && addedNodes[0].classList.contains("embeddedPlayer"))
-            .map(record => record.addedNodes[0]);
+        const player = mutations
+            .filter(({ addedNodes }) => addedNodes.length)
+            .flatMap(record => Array.from(record.addedNodes.values()))
+            .find(node => node.classList.contains("embeddedPlayer"));
 
         if (player) {
             const video = player.querySelector("video");
