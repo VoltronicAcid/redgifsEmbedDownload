@@ -1,2 +1,3 @@
-# redgifsEmbedDownload
-Download embedded gifs from RedGIFs
+# RedGIFs Embed Download
+
+Download embedded gifs from RedGIFs.
