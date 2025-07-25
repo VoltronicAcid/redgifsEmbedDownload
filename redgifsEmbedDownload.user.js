@@ -4,7 +4,7 @@
 // @author      VoltronicAcid
 // @version     0.1
 // @match       http*://*redgifs.com/ifr/*
-// @icon        https://www.google.com/s2/favicons?sz=64&domain=reddit.com
+// @icon        https://www.google.com/s2/favicons?sz=64&domain=redgifs.com
 // @run-at      document-end
 // ==/UserScript==
 
